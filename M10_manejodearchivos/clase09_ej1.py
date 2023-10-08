@@ -7,3 +7,5 @@ if len(sys.argv) == 4:
 else:
     print("ERROR: Introdujo una cantidad de argumentos distinta de tres (3)")
     print('Ejemplo: clase09_ej1.py 1 2 3')
+    
+input()
