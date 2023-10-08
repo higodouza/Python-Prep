@@ -13,13 +13,13 @@ def Factorial(numero):
     '''
     #Tu código aca:
     
-    if not isinstance(numero, int) or numero < 0:
+    if type(numero) != int or numero < 0:
         return None
-    elif numero == 0:
+    elif numero == 0 or numero == 1:
         return 1
     else:
         factorial = 1
-        for i in range(1, numero + 1):
+        for i in range(2, numero + 1):
             factorial *= i
         return factorial
 
@@ -36,15 +36,17 @@ def EsPrimo(valor):
     '''
     #Tu código aca:
     
-    primo=True
-    if type(valor)!=int:
+    if type(valor) != int:
         return None
-    else:
-        for i in range(2,valor):
-            if valor%i==0:
-                primo=False
-                break     
-    return primo
+
+    if valor < 2:
+        return False
+
+    for i in range(2, int(valor**0.5) + 1):
+        if valor % i == 0:
+            return False
+
+    return True
     
 def ClaseAnimal(especie, color):
     '''
